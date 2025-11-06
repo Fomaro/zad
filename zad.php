@@ -7,8 +7,23 @@ $b = null;
 
 function enterNumbers()
 {
-	// TODO: реализовано в ветке `enter-numbers`
-	echo "[enterNumbers] not implemented yet. Переключитесь на ветку enter-numbers.\n";
+	global $a, $b;
+	echo "Введите первое число: ";
+	$val = trim(fgets(STDIN));
+	while ($val === '' || !is_numeric($val)) {
+		echo "Некорректный ввод. Введите число: ";
+		$val = trim(fgets(STDIN));
+	}
+	$a = (float)$val;
+
+	echo "Введите второе число: ";
+	$val = trim(fgets(STDIN));
+	while ($val === '' || !is_numeric($val)) {
+		echo "Некорректный ввод. Введите число: ";
+		$val = trim(fgets(STDIN));
+	}
+	$b = (float)$val;
+	echo "Числа установлены: a={$a}, b={$b}\n";
 }
 
 function add()
