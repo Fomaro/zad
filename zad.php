@@ -65,8 +65,14 @@ function divide()
 
 function power()
 {
-	// TODO: реализовано в ветке `power`
-	echo "[power] not implemented yet. Переключитесь на ветку power.\n";
+	global $a, $b;
+	if ($a === null || $b === null) {
+		echo "Сначала введите два числа (пункт 1).\n";
+		return;
+	}
+	// возводим a в степень b
+	$result = pow($a, $b);
+	echo "{$a} в степени {$b} = {$result}\n";
 }
 
 function showMenu()
