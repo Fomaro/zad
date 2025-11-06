@@ -50,8 +50,17 @@ function subtract()
 
 function divide()
 {
-	// TODO: реализовано в ветке `divide`
-	echo "[divide] not implemented yet. Переключитесь на ветку divide.\n";
+	global $a, $b;
+	if ($a === null || $b === null) {
+		echo "Сначала введите два числа (пункт 1).\n";
+		return;
+	}
+	if ((float)$b == 0.0) {
+		echo "Ошибка: деление на ноль.\n";
+		return;
+	}
+	$result = $a / $b;
+	echo "Частное: {$result}\n";
 }
 
 function power()
