@@ -13,8 +13,13 @@ function enterNumbers()
 
 function add()
 {
-	// TODO: реализовано в ветке `add`
-	echo "[add] not implemented yet. Переключитесь на ветку add.\n";
+	global $a, $b;
+	if ($a === null || $b === null) {
+		echo "Сначала введите два числа (пункт 1).\n";
+		return;
+	}
+	$result = $a + $b;
+	echo "Сумма: {$result}\n";
 }
 
 function subtract()
