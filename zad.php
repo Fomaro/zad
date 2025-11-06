@@ -19,8 +19,13 @@ function add()
 
 function subtract()
 {
-	// TODO: реализовано в ветке `subtract`
-	echo "[subtract] not implemented yet. Переключитесь на ветку subtract.\n";
+	global $a, $b;
+	if ($a === null || $b === null) {
+		echo "Сначала введите два числа (пункт 1).\n";
+		return;
+	}
+	$result = $a - $b;
+	echo "Разность: {$result}\n";
 }
 
 function divide()
